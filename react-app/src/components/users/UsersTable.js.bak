@@ -38,7 +38,7 @@ const UsersTable = (props) => {
                     return ({
                         data: res.records,
                         page: query.page,
-                        totalCount: parseInt(res.totalCount)
+                        totalCount: parseInt(res.total_count)
                     })
                 }
                 }
