@@ -10,7 +10,7 @@
             "apiName": "users",
             "host":"http://localhost",
             "port":"8070",
-            "url":"http://books:3000/"
+            "url":"http://users:3000/"
         }
     }
 }

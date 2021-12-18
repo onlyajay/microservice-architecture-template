@@ -1,5 +1,4 @@
 const cors = require('cors');
-const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const http = require('http');
@@ -24,7 +23,7 @@ const allowCrossDomain = function (req, res, next) {
     res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
     res.header('Access-Control-Allow-Credentials', false);
     res.header('Access-Control-Max-Age', '86400');
-    res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept, x_chord, y_chord, z_chord, d_chord');
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept, Authorization');
     next();
 };
 
@@ -64,7 +63,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(allowCrossDomain);
 
 app.post('/auth/login', tokenGen);
